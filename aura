@@ -1,0 +1,8 @@
+#!/bin/bash
+curl -k https://raw.githubusercontent.com/aura-aur/pkgs/main/packagelist -o /tmp/templist 2> /dev/null
+
+if grep -qFx "$2" "/tmp/templist"; then
+    echo "It's a package!"
+else
+    echo "Not a package"
+fi
